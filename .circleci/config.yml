@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - ubuntu:latest
+      - image: ubuntu:latest
     steps:
       - checkout
       - echo "foo!"
