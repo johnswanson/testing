@@ -5,12 +5,10 @@ jobs:
       - image: ubuntu:latest
     steps:
       - checkout
-      - echo "foo!"
+      - run: "echo foo"
 
 workflows:
   version: 2
   workflow:
     jobs:
-      - build:
-          pre-steps:
-            - run: "echo 'before checkout'"
+      - build
