@@ -12,4 +12,5 @@ workflows:
   workflow:
     jobs:
       - build:
-          pre-steps: "echo 'before checkout'"
+          pre-steps:
+            - run: "echo 'before checkout'"
