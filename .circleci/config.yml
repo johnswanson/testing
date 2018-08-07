@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - ubuntu:latest
+    steps:
+      - checkout
+      - echo "foo!"
+workflows:
+  workflow:
+    jobs:
+      - build:
+          pre-steps: "echo 'before checkout'"
