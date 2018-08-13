@@ -1,4 +1,4 @@
-version: "2.1"
+version: 2
 
 jobs:
   "foo/test":
@@ -20,14 +20,14 @@ jobs:
 workflows:
   main:
     jobs:
-      - foo/test
-      - foo/build
+      - "foo/test"
+      - "foo/build"
       - hold:
           type: approval
           requires:
-            - foo/test
-            - foo/build
-      - deploy:
+            - "foo/test"
+            - "foo/build"
+      - "foo/deploy":
           requires:
             - hold
 
