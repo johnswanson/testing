@@ -18,6 +18,7 @@ jobs:
       - run: "echo deploy"
 
 workflows:
+  version: 2
   main:
     jobs:
       - "foo/test"
