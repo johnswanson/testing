@@ -1,35 +1,33 @@
 version: "2.1"
 
-orbs:
-  foo:
-    jobs:
-      test:
-        docker:
-          - image: "ubuntu:latest"
-        steps:
-          - run: "echo test"
-      build:
-        docker:
-          - image: "ubuntu:latest"
-        steps:
-          - run: "echo build"
-      deploy:
-        docker:
-          - image: "ubuntu:latest"
-        steps:
-          - run: "echo deploy"
+jobs:
+  test:
+    docker:
+      - image: "ubuntu:latest"
+    steps:
+      - run: "echo test"
+  build:
+    docker:
+      - image: "ubuntu:latest"
+    steps:
+      - run: "echo build"
+  deploy:
+    docker:
+      - image: "ubuntu:latest"
+    steps:
+      - run: "echo deploy"
 
 workflows:
   main:
     jobs:
-      - foo/test
-      - foo/build
+      - test
+      - build
       - hold:
           type: approval
           requires:
-            - foo/test
-            - foo/build
-      - foo/deploy:
+            - test
+            - build
+      - deploy:
           requires:
             - hold
 
