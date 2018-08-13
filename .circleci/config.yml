@@ -25,4 +25,5 @@ workflows:
     jobs:
       - foo/test:
           filters:
-            branches: master
+            branches:
+              only: master
