@@ -1,34 +1,27 @@
-version: 2
+version: 2.1
 
-jobs:
-  "foo/test":
-    docker:
-      - image: "ubuntu:latest"
-    steps:
-      - run: "echo test"
-  "foo/build":
-    docker:
-      - image: "ubuntu:latest"
-    steps:
-      - run: "echo build"
-  "foo/deploy":
-    docker:
-      - image: "ubuntu:latest"
-    steps:
-      - run: "echo deploy"
+orbs:
+  foo:
+    jobs:
+      test:
+        docker:
+          - image: "ubuntu:latest"
+        steps:
+          - run: "echo test"
+      build:
+        docker:
+          - image: "ubuntu:latest"
+        steps:
+          - run: "echo build"
+      deploy:
+        docker:
+          - image: "ubuntu:latest"
+        steps:
+          - run: "echo deploy"
 
 workflows:
   version: 2
   main:
     jobs:
-      - "foo/test"
-      - "foo/build"
-      - hold:
-          type: approval
-          requires:
-            - "foo/test"
-            - "foo/build"
-      - "foo/deploy":
-          requires:
-            - hold
-
+      - foo/test:
+          name: testingtesting123
