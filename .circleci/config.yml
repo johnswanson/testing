@@ -25,11 +25,11 @@ workflows:
       - foo/test
       - foo/build
       - hold:
+          type: approval
           requires:
             - foo/test
             - foo/build
       - foo/deploy:
-          type: approval
           requires:
             - hold
 
