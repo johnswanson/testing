@@ -24,4 +24,5 @@ workflows:
   main:
     jobs:
       - foo/test:
-          name: testingtesting123
+          filters:
+            branches: master
