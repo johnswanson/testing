@@ -1,17 +1,17 @@
 version: "2.1"
 
 jobs:
-  test:
+  "foo/test":
     docker:
       - image: "ubuntu:latest"
     steps:
       - run: "echo test"
-  build:
+  "foo/build":
     docker:
       - image: "ubuntu:latest"
     steps:
       - run: "echo build"
-  deploy:
+  "foo/deploy":
     docker:
       - image: "ubuntu:latest"
     steps:
@@ -20,13 +20,13 @@ jobs:
 workflows:
   main:
     jobs:
-      - test
-      - build
+      - foo/test
+      - foo/build
       - hold:
           type: approval
           requires:
-            - test
-            - build
+            - foo/test
+            - foo/build
       - deploy:
           requires:
             - hold
