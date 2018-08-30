@@ -2,8 +2,8 @@ version: 2
 jobs:
   build:
     environment:
-      - FOO="hello"
-      - FOO="$FOO world"
+      - BAR="hello"
+      - FOO="$BAR world"
     docker:
       - image: ubuntu:latest
     steps:
