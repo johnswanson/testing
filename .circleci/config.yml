@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    environment:
+      - FOO="hello"
+      - FOO="$FOO world"
+    docker:
+      - image: ubuntu:latest
+    steps:
+      - run: "echo $FOO"
