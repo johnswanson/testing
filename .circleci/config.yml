@@ -1,10 +1,23 @@
-version: 2
+version: 2.1
 jobs:
-  build:
-    environment:
-      - BAR="hello"
-      - FOO="$BAR world"
+  other:
     docker:
       - image: ubuntu:latest
     steps:
-      - run: "echo $FOO"
+      - run: "i am in other job"
+
+  build:
+    parameters:
+      foo:
+        type: string
+    docker:
+      - image: ubuntu:latest
+    steps:
+      - run: "echo env: $FOO param: << parameters.foo >>"
+
+workflows:
+  workflow:
+    jobs:
+      - build:
+          foo: from-workflow
+
