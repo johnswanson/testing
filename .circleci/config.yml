@@ -1,0 +1,18 @@
+defaults: &defaults
+  working_directory: ~/release-tools
+  docker:
+    - image: circleci/python:3.6-jessie-browsers
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Install release branching dependencies
+          command: |
+            cd release_branching
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
