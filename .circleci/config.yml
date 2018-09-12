@@ -1,6 +1,6 @@
 version: '2.1'
 jobs:
-  "this is the first one-1":
+  first-1:
     docker:
     - image: ubuntu:latest
     steps:
@@ -10,7 +10,7 @@ jobs:
         command: echo default
     - run:
         command: echo hello world
-  "this is the first one-2":
+  first-2:
     docker:
     - image: ubuntu:latest
     steps:
@@ -52,10 +52,10 @@ workflows:
   version: 2
   foo:
     jobs:
-    - this is the first one.-1:
-        name: this is the first one.-1 (renamed from this is the first one.)
-    - this is the first one.-2:
-        name: this is the first one.-2 (renamed from this is the first one.)
+    - first-1:
+        name: first-1 (renamed from first)
+    - first-2:
+        name: first-2 (renamed from first)
     - job-a-1
     - job-a
     - named-job
