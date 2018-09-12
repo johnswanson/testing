@@ -13,7 +13,7 @@ workflows:
 jobs:
   job-a-1:
     docker:
-    - image: circleci/something:something
+    - image: ubuntu:latest
     steps:
     - run:
         command: echo 1
@@ -23,7 +23,7 @@ jobs:
         command: echo hello world
   job-a-2:
     docker:
-    - image: circleci/something:something
+    - image: ubuntu:latest
     steps:
     - run:
         command: echo 2
@@ -35,7 +35,7 @@ jobs:
         command: echo hello world
   named-job:
     docker:
-    - image: circleci/something:something
+    - image: ubuntu:latest
     steps:
     - run:
         command: echo 3
