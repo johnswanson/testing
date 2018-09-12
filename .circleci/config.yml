@@ -1,6 +1,6 @@
 version: '2.1'
 jobs:
-  this is the first one-1:
+  "this is the first one-1":
     docker:
     - image: ubuntu:latest
     steps:
@@ -10,7 +10,7 @@ jobs:
         command: echo default
     - run:
         command: echo hello world
-  this is the first one-2:
+  "this is the first one-2":
     docker:
     - image: ubuntu:latest
     steps:
