@@ -1,17 +1,6 @@
-version: "2.1"
-
-workflows:
-  version: 2
-  foo:
-    jobs:
-    - job-a-1:
-        name: job-a-1 (renamed from job-a)
-    - job-a-2:
-        name: job-a-2 (renamed from job-a)
-    - named-job
-
+version: '2.1'
 jobs:
-  job-a-1:
+  this is the first one.-1:
     docker:
     - image: ubuntu:latest
     steps:
@@ -21,7 +10,23 @@ jobs:
         command: echo default
     - run:
         command: echo hello world
-  job-a-2:
+  this is the first one.-2:
+    docker:
+    - image: ubuntu:latest
+    steps:
+    - run:
+        command: echo 1
+    - run:
+        command: echo default
+    - run:
+        command: echo hello world
+  job-a-1:
+    docker:
+    - image: ubuntu:latest
+    steps:
+    - run:
+        command: echo hello world
+  job-a:
     docker:
     - image: ubuntu:latest
     steps:
@@ -43,3 +48,14 @@ jobs:
         command: echo round 3
     - run:
         command: echo hello world
+workflows:
+  version: 2
+  foo:
+    jobs:
+    - this is the first one.-1:
+        name: this is the first one.-1 (renamed from this is the first one.)
+    - this is the first one.-2:
+        name: this is the first one.-2 (renamed from this is the first one.)
+    - job-a-1
+    - job-a
+    - named-job
