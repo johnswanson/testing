@@ -1,61 +1,9 @@
-version: '2.1'
-jobs:
-  first-1:
-    docker:
-    - image: ubuntu:latest
-    steps:
-    - run:
-        command: echo 1
-    - run:
-        command: echo default
-    - run:
-        command: echo hello world
-  first-2:
-    docker:
-    - image: ubuntu:latest
-    steps:
-    - run:
-        command: echo 1
-    - run:
-        command: echo default
-    - run:
-        command: echo hello world
-  job-a-1:
-    docker:
-    - image: ubuntu:latest
-    steps:
-    - run:
-        command: echo hello world
-  job-a:
-    docker:
-    - image: ubuntu:latest
-    steps:
-    - run:
-        command: echo 2
-    - run:
-        command: echo round 2
-    - run:
-        command: echo still round 2
-    - run:
-        command: echo hello world
-  named-job:
-    docker:
-    - image: ubuntu:latest
-    steps:
-    - run:
-        command: echo 3
-    - run:
-        command: echo round 3
-    - run:
-        command: echo hello world
+version: 2
+
+orbs:
+  gradle: circleci/gradle@0.0.1
+
 workflows:
-  version: 2
-  foo:
+  test:
     jobs:
-    - first-1:
-        name: first-1 (renamed from first)
-    - first-2:
-        name: first-2 (renamed from first)
-    - job-a-1
-    - job-a
-    - named-job
+      - gradle/testversion: '2.1'
