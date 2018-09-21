@@ -1,8 +1,6 @@
-version: 2
+version: 2.1
 
 jobs: {}
-
-
 
 orbs:
   gradle: circleci/gradle@0.0.1
