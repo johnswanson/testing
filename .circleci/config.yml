@@ -1,11 +1,15 @@
-version: 2.1
+version: "2"
 
-jobs: {}
-
-orbs:
-  gradle: circleci/gradle@0.0.1
+jobs:
+  build:
+    docker:
+      - image: ubuntu:xenial
+    steps:
+      - run:
+          command: "echo hello!"
 
 workflows:
+  version: "2"
   test:
     jobs:
-      - gradle/testversion: '2.1'
+      - build
