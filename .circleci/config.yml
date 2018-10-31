@@ -1,4 +1,4 @@
-version: "2"
+version: 2
 
 jobs:
   build:
@@ -8,7 +8,7 @@ jobs:
       - run: "can i do this?"
 
 workflows:
-  version: "2"
+  version: 2
   test:
     jobs:
       - build
