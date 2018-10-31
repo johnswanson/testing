@@ -5,8 +5,7 @@ jobs:
     docker:
       - image: ubuntu:xenial
     steps:
-      - run:
-          command: "echo hello!"
+      - run: "can i do this?"
 
 workflows:
   version: "2"
