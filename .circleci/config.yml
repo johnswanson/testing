@@ -8,8 +8,10 @@ jobs:
       - checkout
       - save_cache:
           paths: .git
+          key: foo
       - persist_to_workspace:
           paths: .git
+          root: /tmp
       - run: "echo 'can i do this?'"
 
 workflows:
