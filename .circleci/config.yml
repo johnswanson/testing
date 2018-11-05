@@ -6,9 +6,8 @@ jobs:
       - image: ubuntu:xenial
     steps:
       - checkout
-      - persist_to_workspace:
-          path: package
-          root: serverless_build
+      - name: testing
+        command: echo oh noes
 
 workflows:
   version: 2
