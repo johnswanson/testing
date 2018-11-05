@@ -5,7 +5,6 @@ jobs:
     docker:
       - image: ubuntu:xenial
     steps:
-      - checkout
       - type: artifacts-store
         path: /tmp/foo
       - type: artifacts_store
