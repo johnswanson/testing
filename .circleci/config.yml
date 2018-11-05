@@ -15,6 +15,12 @@ jobs:
         path: /tmp/foo
       - artifacts-store:
           path: /tmp/foo
+      - artifacts_store:
+          path: /tmp/foo
+      - store_artifacts:
+          path: /tmp/foo
+      - store-artifacts:
+          path: /tmp/foo
 
 workflows:
   version: 2
