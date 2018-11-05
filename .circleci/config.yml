@@ -5,6 +5,11 @@ jobs:
     docker:
       - image: ubuntu:xenial
     steps:
+      - checkout
+      - save_cache:
+          paths: .git
+      - persist_to_workspace:
+          paths: .git
       - run: "echo 'can i do this?'"
 
 workflows:
