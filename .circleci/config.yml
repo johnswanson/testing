@@ -6,13 +6,9 @@ jobs:
       - image: ubuntu:xenial
     steps:
       - checkout
-      - save_cache:
-          paths: .git
-          key: foo
-      - persist_to_workspace:
-          paths: .git
-          root: /tmp
-      - run: "echo 'can i do this?'"
+      - run:
+          command: "echo 'can i do this?'"
+          no_output_timeout: 10
 
 workflows:
   version: 2
