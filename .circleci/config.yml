@@ -6,7 +6,7 @@ jobs:
       - image: ubuntu:xenial
     steps:
       - checkout
-      - artifacts_store:
+      - artifacts-store:
           path: /tmp/foo
 
 workflows:
