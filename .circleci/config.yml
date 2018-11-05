@@ -6,8 +6,8 @@ jobs:
       - image: ubuntu:xenial
     steps:
       - checkout
-      - run:
-          run: echo foo
+      - name: foo
+        run: echo foo
 
 workflows:
   version: 2
