@@ -5,21 +5,37 @@ jobs:
     docker:
       - image: ubuntu:xenial
     steps:
-      - type: artifacts-store
+      - type: store-test-results
         path: /tmp/foo
-      - type: artifacts_store
-        path: /tmp/foo
-      - type: store_artifacts
-        path: /tmp/foo
-      - type: store-artifacts
-        path: /tmp/foo
-      - artifacts-store:
+      - store-test-results:
           path: /tmp/foo
-      - artifacts_store:
+      - type: store_test-results
+        path: /tmp/foo
+      - store_test-results:
           path: /tmp/foo
-      - store_artifacts:
+      - type: store-test_results
+        path: /tmp/foo
+      - store-test_results:
           path: /tmp/foo
-      - store-artifacts:
+      - type: store_test_results
+        path: /tmp/foo
+      - store_test_results:
+          path: /tmp/foo
+      - type: test-results-store
+        path: /tmp/foo
+      - test-results-store:
+          path: /tmp/foo
+      - type: test_results-store
+        path: /tmp/foo
+      - test_results-store:
+          path: /tmp/foo
+      - type: test-results_store
+        path: /tmp/foo
+      - test-results_store:
+          path: /tmp/foo
+      - type: test_results_store
+        path: /tmp/foo
+      - test_results_store:
           path: /tmp/foo
 
 workflows:
