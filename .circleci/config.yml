@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: "echo 'can i do this?'"
+          command: "sleep 11 && echo hi"
           no_output_timeout: 10
 
 workflows:
