@@ -6,6 +6,14 @@ jobs:
       - image: ubuntu:xenial
     steps:
       - checkout
+      - type: artifacts-store
+        path: /tmp/foo
+      - type: artifacts_store
+        path: /tmp/foo
+      - type: store_artifacts
+        path: /tmp/foo
+      - type: store-artifacts
+        path: /tmp/foo
       - artifacts-store:
           path: /tmp/foo
 
