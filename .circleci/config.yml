@@ -6,8 +6,8 @@ jobs:
       - image: ubuntu:xenial
     steps:
       - checkout
-      - name: foo
-        run: echo foo
+      - artifacts_store:
+          path: /tmp/foo
 
 workflows:
   version: 2
