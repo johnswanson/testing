@@ -6,9 +6,9 @@ jobs:
       - image: ubuntu:xenial
     steps:
       - checkout
-      - run:
-          command: "sleep 11 && echo hi"
-          no_output_timeout: 10.5
+      - persist_to_workspace:
+          path: package
+          root: serverless_build
 
 workflows:
   version: 2
