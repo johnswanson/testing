@@ -43,3 +43,6 @@ workflows:
   test:
     jobs:
       - build
+    filters:
+      tags:
+        only: /^foo.+/
