@@ -42,7 +42,7 @@ workflows:
   version: 2
   test:
     jobs:
-      - build
-    filters:
-      tags:
-        only: /^foo.+/
+      - build:
+          filters:
+            tags:
+              only: /^foo.+/
