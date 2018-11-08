@@ -2,8 +2,10 @@ version: 2
 
 jobs:
   build:
-    docker:
-      - image: ubuntu:xenial
+    machine:
+      enabled: true
+      services:
+        - docker
     steps:
       - type: store-test-results
         path: /tmp/foo
