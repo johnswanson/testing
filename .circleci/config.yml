@@ -2,9 +2,9 @@ version: 2
 
 jobs:
   build:
-    machine:
-      enabled: true
-      working_directory: /tmp
+    docker:
+      - image: ubuntu
+        command: []
     steps:
       - run: echo hellooooooo
       - run: pwd
