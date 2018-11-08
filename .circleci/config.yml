@@ -2,43 +2,12 @@ version: 2
 
 jobs:
   build:
-    machine:
-      enabled: true
-      services:
-        - docker
+    docker:
+      - image: ubuntu
+    macos:
+      xcode: '9.0'
     steps:
-      - type: store-test-results
-        path: /tmp/foo
-      - store-test-results:
-          path: /tmp/foo
-      - type: store_test-results
-        path: /tmp/foo
-      - store_test-results:
-          path: /tmp/foo
-      - type: store-test_results
-        path: /tmp/foo
-      - store-test_results:
-          path: /tmp/foo
-      - type: store_test_results
-        path: /tmp/foo
-      - store_test_results:
-          path: /tmp/foo
-      - type: test-results-store
-        path: /tmp/foo
-      - test-results-store:
-          path: /tmp/foo
-      - type: test_results-store
-        path: /tmp/foo
-      - test_results-store:
-          path: /tmp/foo
-      - type: test-results_store
-        path: /tmp/foo
-      - test-results_store:
-          path: /tmp/foo
-      - type: test_results_store
-        path: /tmp/foo
-      - test_results_store:
-          path: /tmp/foo
+      run: echo hellooooooo
 
 workflows:
   version: 2
