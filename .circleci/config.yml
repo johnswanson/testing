@@ -3,8 +3,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ubuntu
-        command: []
+      image: ubuntu
+      command: []
     steps:
       - name: foo
         command: echo hello
