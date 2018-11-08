@@ -2,12 +2,11 @@ version: 2
 
 jobs:
   build:
-    docker:
-      - image: ubuntu
-    macos:
-      xcode: '9.0'
+    machine:
+      enabled: true
+      working_directory: /tmp
     steps:
-      run: echo hellooooooo
+      - run: echo hellooooooo
 
 workflows:
   version: 2
