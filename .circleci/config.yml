@@ -6,8 +6,8 @@ jobs:
       - image: ubuntu
         command: []
     steps:
-      - run: echo hellooooooo
-      - run: pwd
+      - name: foo
+        command: echo hello
 
 workflows:
   version: 2
