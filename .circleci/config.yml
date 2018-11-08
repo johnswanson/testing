@@ -7,6 +7,7 @@ jobs:
       working_directory: /tmp
     steps:
       - run: echo hellooooooo
+      - run: pwd
 
 workflows:
   version: 2
