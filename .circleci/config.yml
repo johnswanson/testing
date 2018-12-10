@@ -3,19 +3,20 @@ version: 2
 jobs:
   test:
     docker:
-      image: ubuntu
+      - image: ubuntu
     steps:
       - run: echo hello
 
   build:
     docker:
-      image: ubuntu
+      - image: ubuntu
     steps:
+      - restore_cache: ~
       - run: echo hello
 
 workflows:
   version: 2
   test:
     jobs:
-      - test
+      - build
 
