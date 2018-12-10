@@ -1,6 +1,12 @@
 version: 2
 
 jobs:
+  test:
+    docker:
+      image: ubuntu
+    steps:
+      - run: echo hello
+
   build:
     docker:
       image: ubuntu
@@ -12,5 +18,5 @@ workflows:
   version: 2
   test:
     jobs:
-      - build
+      - test
 
