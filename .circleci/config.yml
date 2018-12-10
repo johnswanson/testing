@@ -4,15 +4,13 @@ jobs:
   build:
     docker:
       image: ubuntu
-      command: []
     steps:
+      - restore_cache: ~
       - run: echo hello
 
 workflows:
   version: 2
   test:
     jobs:
-      - build:
-          filters:
-            tags:
-              only: /^foo.+/
+      - build
+
