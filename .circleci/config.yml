@@ -12,6 +12,8 @@ jobs:
       - image: alpine:latest
     steps:
       - run: echo built
+      - run:
+          name: foobar
   deploy:
     docker:
       - image: alpine:latest
