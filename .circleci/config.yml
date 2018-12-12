@@ -12,8 +12,6 @@ jobs:
       - image: alpine:latest
     steps:
       - run: echo built
-      - run:
-          name: foobar
   deploy:
     docker:
       - image: alpine:latest
@@ -24,6 +22,7 @@ workflows:
   version: 2
   deploy-production:
     jobs:
+      - deploy-lint
       - build
       - deploy:
           requires:
