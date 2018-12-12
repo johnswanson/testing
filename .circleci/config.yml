@@ -2,8 +2,8 @@ version: 2
 
 jobs:
   deploy-lint:
-    docker:
-      this-is-utterly: broken
+    run:
+      name: foobar
   build:
     docker:
       - image: alpine:latest
