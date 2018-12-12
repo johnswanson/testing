@@ -2,8 +2,11 @@ version: 2
 
 jobs:
   deploy-lint:
-    run:
-      name: foobar
+    docker:
+      - image: alpine:latest
+    steps:
+      - run:
+          name: foobar
   build:
     docker:
       - image: alpine:latest
