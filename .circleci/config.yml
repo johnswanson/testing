@@ -1,22 +1,27 @@
 version: 2
 
 jobs:
-  test:
+  deploy-lint:
     docker:
-      - image: ubuntu
-    steps:
-      - run: echo hello
-
+      this-is-utterly: broken
   build:
     docker:
-      - image: ubuntu
+      - image: alpine:latest
     steps:
-      - restore_cache: ~
-      - run: echo hello
+      - run: echo built
+  deploy:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: echo deployed
 
 workflows:
   version: 2
-  test:
+  deploy-production:
     jobs:
-      - test
+      - deploy-lint
+      - build
+      - deploy:
+          requires:
+            - build
 
