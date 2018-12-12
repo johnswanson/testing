@@ -19,7 +19,6 @@ workflows:
   version: 2
   deploy-production:
     jobs:
-      - deploy-lint
       - build
       - deploy:
           requires:
