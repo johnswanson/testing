@@ -17,6 +17,8 @@ jobs:
       - image: alpine:latest
     steps:
       - run: echo deployed
+      - run:
+          name: bah
 
 workflows:
   version: 2
