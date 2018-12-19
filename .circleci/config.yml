@@ -19,6 +19,8 @@ jobs:
       - run: echo deployed
       - run:
           name: bah
+      - run:
+          name: bah
 
 workflows:
   version: 2
