@@ -1,35 +1,10 @@
 version: 2.1
 
 jobs:
-  deploy-lint:
-    docker:
-      - image: alpine:latest
-    steps:
-      - run:
-          name: foobar
   build:
     docker:
       - image: alpine:latest
+    environment:
+      FOO: 2018-12-31
     steps:
-      - run: echo built
-  deploy:
-    docker:
-      - image: alpine:latest
-    steps:
-      - run: echo deployed
-      - run:
-          name: bah
-      - run:
-          name: bah
-
-
-workflows:
-  version: 2
-  deploy-production:
-    jobs:
-      - deploy-lint
-      - build
-      - deploy:
-          requires:
-            - build
-
+      - run: echo $FOO
