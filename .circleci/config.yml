@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 jobs:
   build:
@@ -8,3 +8,9 @@ jobs:
       FOO: 2018-12-31
     steps:
       - run: echo $FOO
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build
