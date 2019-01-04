@@ -1,16 +1,12 @@
-version: 2
+version: 2.1
+orbs:
+  john: john/depa05ec0981-4a16-4af9-8536-9cb3f11d353e@0.0.1
 
 jobs:
   build:
     docker:
       - image: alpine:latest
     environment:
-      FOO: 2018-12-31
+      FOO: "2018-12-31"
     steps:
       - run: echo $FOO
-
-workflows:
-  version: 2
-  workflow:
-    jobs:
-      - build
