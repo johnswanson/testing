@@ -5,9 +5,10 @@ jobs:
     docker:
       - image: ubuntu:latest
     steps:
-      - run:
+      - run: |
+          echo "foo" > project.clj
           echo "abc" > '/tmp/a b c'
       - save_cache:
-          key: foo
+          key: foo-{{ checksum "project.clj" }}
           paths:
             - /tmp
