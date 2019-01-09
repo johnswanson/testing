@@ -11,4 +11,4 @@ jobs:
       - save_cache:
           key: foo
           paths:
-            - /tmp
+            - /tmp/a b c
