@@ -10,7 +10,7 @@ jobs:
           uuidgen > '/tmp/a b c'
       - save_cache:
           paths: /u/c/a b c
-          key: foo-{{ checksum /tmp/file }}
+          key: foo-{{ checksum "/tmp/file" }}
   other:
     docker:
       - image: alpine:latest
@@ -20,7 +20,7 @@ jobs:
           uuidgen > /tmp/file
           uuidgen > '/tmp/a b c'
       - save_cache:
-          key: foo-{{ checksum /tmp/file }}
+          key: foo-{{ checksum "/tmp/file" }}
           paths:
             - /tmp/a b c
 workflows:
