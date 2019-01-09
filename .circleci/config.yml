@@ -21,8 +21,7 @@ jobs:
           uuidgen > '/tmp/a b c'
       - save_cache:
           key: foo-{{ checksum "/tmp/file" }}
-          paths:
-            - /tmp/a b c
+          paths: /tmp/a b c
 workflows:
   version: 2
   workflow:
