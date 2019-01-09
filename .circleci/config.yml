@@ -6,8 +6,8 @@ jobs:
     steps:
     - run: apk add --no-cache ca-certificates
     - save_cache:
-        paths: /users/circleci/a b c
-        key: aiosdjioasdjfoiasjoifjoaadj
+        paths: /u/c/a b c
+        key: aiosdjifoasdjfoiasjoifjoaadj
 workflows:
   version: 2
   workflow:
