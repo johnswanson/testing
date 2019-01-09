@@ -12,4 +12,4 @@ jobs:
       - save_cache:
           key: foo
           paths:
-            - "/tmp/a b c"
+            - "/tmp/a"
