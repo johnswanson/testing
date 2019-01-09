@@ -3,9 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: alpine:latest
-    environment:
-      FOO: "2018-12-31"
+      - image: ubuntu:latest
     steps:
       - run:
           echo "abc" > '/tmp/a b c'
