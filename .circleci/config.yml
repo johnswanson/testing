@@ -3,12 +3,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ubuntu:latest
+      - image: alpine:latest
     steps:
-      - run: |
-          echo "foo" > project.clj
+      - run: apk add --no-cache ca-certificates
+      - run:
           echo "abc" > '/tmp/a b c'
       - save_cache:
-          key: foo-{{ checksum "project.clj" }}
+          key: foo
           paths:
             - /tmp
