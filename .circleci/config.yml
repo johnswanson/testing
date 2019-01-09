@@ -4,7 +4,28 @@ jobs:
     docker:
       - image: alpine:latest
     steps:
-    - run: apk add --no-cache ca-certificates
-    - save_cache:
-        paths: /u/c/a b c
-        key: aiosdjifoasdjfoiasjoifjoaadja
+      - run: apk add --no-cache ca-certificates util-linux
+      - run: |
+          uuidgen > /tmp/file
+          uuidgen > '/tmp/a b c'
+      - save_cache:
+          paths: /u/c/a b c
+          key: foo-{{ checksum /tmp/file }}
+  other:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: apk add --no-cache ca-certificates util-linux
+      - run: |
+          uuidgen > /tmp/file
+          uuidgen > '/tmp/a b c'
+      - save_cache:
+          key: foo-{{ checksum /tmp/file }}
+          paths:
+            - /tmp/a b c
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build
+    - other
