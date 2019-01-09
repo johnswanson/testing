@@ -1,14 +1,15 @@
 version: 2
-
 jobs:
   build:
     docker:
       - image: alpine:latest
     steps:
-      - run: apk add --no-cache ca-certificates
-      - run:
-          echo "abc" > '/tmp/a b c'
-      - save_cache:
-          key: bar
-          paths:
-            - /tmp/a b c
+    - run: apk add --no-cache ca-certificates
+    - save_cache:
+        paths: /users/circleci/project folder
+        key: foo
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build
