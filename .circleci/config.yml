@@ -9,6 +9,6 @@ jobs:
       - run:
           echo "abc" > '/tmp/a b c'
       - save_cache:
-          key: foo
+          key: bar
           paths:
             - /tmp/a b c
