@@ -1,30 +1,12 @@
-version: 2
+version: 2.1
 jobs:
   build:
+    parameters:
+      foo:
+        type: string
+        default: meow
     docker:
       - image: alpine:latest
     steps:
-      - run: apk add --no-cache ca-certificates util-linux
-      - run: |
-          uuidgen > /tmp/file
-          uuidgen > '/tmp/a b c'
-      - save_cache:
-          paths: "/u/c/a b c"
-          key: foo-{{ checksum "/tmp/file" }}
-  other:
-    docker:
-      - image: alpine:latest
-    steps:
-      - run: apk add --no-cache ca-certificates util-linux
-      - run: |
-          uuidgen > /tmp/file
-          uuidgen > '/tmp/a b c'
-      - save_cache:
-          key: foo-{{ checksum "/tmp/file" }}
-          paths: "/tmp/a b c"
-workflows:
-  version: 2
-  workflow:
-    jobs:
-    - build
-    - other
+      - run:
+          echo << parameters.foo >>
