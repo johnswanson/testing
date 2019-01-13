@@ -9,4 +9,4 @@ jobs:
       - image: alpine:latest
     steps:
       - run:
-          echo << parameters.bar >> << parameters.bar >>
+          echo << parameters.foo >> << parameters.foo >>
