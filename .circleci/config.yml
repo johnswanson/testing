@@ -1,12 +1,11 @@
 version: 2.1
+orbs:
+  orb:
+    hannah/clojure@volatile
 jobs:
   build:
-    parameters:
-      foo:
-        type: string
-        default: meow
     docker:
       - image: alpine:latest
     steps:
       - run:
-          echo << parameters.foo >> << parameters.foo >>
+          echo hello world
