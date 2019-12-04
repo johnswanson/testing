@@ -1,11 +1,8 @@
 version: 2.1
-orbs:
-  orb:
-    hannah/clojure@volatile
 jobs:
   build:
-    docker:
-      - image: alpine:latest
+    machine:
+      image: circleci/classic:201808-01
     steps:
       - run:
           echo hello world
